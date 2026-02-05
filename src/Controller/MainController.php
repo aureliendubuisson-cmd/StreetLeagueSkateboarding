@@ -10,10 +10,10 @@ use Symfony\Component\Routing\Attribute\Route;
 class MainController extends AbstractController
 {
     #[Route('/')]
-    public function homepage(): Response
+    public function homepage(SkaterRepository $skaters): Response
     {
-        $skaters = new SkaterRepository()->findall();
+        $skaters->findall();
 
-        return $this->render('homepage.html.twig', ['skaters' =>$skaters]);
+        return $this->render('homepage.html.twig', ['skaters' => $skaters]);
     }
 }
