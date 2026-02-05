@@ -1,9 +1,14 @@
-# Commandes docker compose
+# Commandes 
 
-## Commandes usuelles
+## Commandes docker
 
 * monter les conteneurs `docker compose up -d` (mode daemon pour faire tourner en arrière-plan)
 * démonter les conteneurs `docker compose down --remove-orphans -v` 
 * construire les conteneurs `docker compose build`
 * check des conteneurs `docker compose ps`
+* ouvrir un shell dans le conteneur php `docker compose exec php bash`
+
+## Commandes php-cs-fixer
+
+* lancer php-cs-fixer (dans le conteneur php) `vendor/bin/php-cs-fixer fix`
  
