@@ -13,18 +13,18 @@ class Skater
     #[ORM\Column]
     public ?int $id = null;
 
-    #[ORM\Column(length: 255, nullable: false)]
+    #[ORM\Column]
     public ?string $name = null;
 
-    #[ORM\Column(length: 255, nullable: false)]
+    #[ORM\Column]
     public ?string $nationality = null;
 
-    #[ORM\Column(nullable: false)]
+    #[ORM\Column]
     public ?int $birthyear = null;
 
-    #[ORM\Column(length: 255, nullable: false)]
+    #[ORM\Column]
     public ?string $favoriteTrick = null;
 
-    #[ORM\Column(nullable: false)]
+    #[ORM\Column]
     public ?bool $winSLS = null;
 }
