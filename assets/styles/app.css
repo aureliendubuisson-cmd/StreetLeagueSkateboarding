@@ -1,24 +1,23 @@
-@import "tailwindcss";
+header{
+    font-size: xx-large;
+}
 
 body {
     background-color: #00000b;
     text-align: center;
     color: whitesmoke;
-    font-weight: bold;
-    border-style: solid;
-}
 
-.header h1{
-    font-size: xx-large;
-    border-style: solid;
-    border-color: #789339;
 }
 
 .skaters h2{
     text-align: left;
     color: orangered;
+    font-size: medium;
 }
 
+.skaters{
+    font-size: medium;
+}
 .skaters p {
     text-align: left;
     color: whitesmoke;
