@@ -1,0 +1,17 @@
+<?php
+
+namespace App\DataFixtures;
+
+use App\Story\SkaterStory;
+use Doctrine\Bundle\FixturesBundle\Fixture;
+use Doctrine\Persistence\ObjectManager;
+
+class AppFixtures extends Fixture
+{
+    public function load(ObjectManager $manager): void
+    {
+        SkaterStory::load();
+
+        $manager->flush();
+    }
+}

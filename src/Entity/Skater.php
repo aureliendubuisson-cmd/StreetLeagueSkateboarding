@@ -5,7 +5,7 @@ namespace App\Entity;
 use App\Repository\SkaterEntityRepository;
 use Doctrine\ORM\Mapping as ORM;
 
-#[ORM\Entity(repositoryClass: SkaterEntityRepository::class)]
+#[ORM\Entity()]
 class Skater
 {
     #[ORM\Id]
