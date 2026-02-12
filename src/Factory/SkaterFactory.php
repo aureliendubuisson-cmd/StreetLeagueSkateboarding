@@ -3,7 +3,6 @@
 namespace App\Factory;
 
 use App\Entity\Skater;
-use http\Env\Response;
 use Zenstruck\Foundry\Persistence\PersistentObjectFactory;
 
 /**
@@ -12,16 +11,16 @@ use Zenstruck\Foundry\Persistence\PersistentObjectFactory;
 final class SkaterFactory extends PersistentObjectFactory
 {
     public const array REAL_TRICKS = [
-        "flip front",
-        "flip back",
-        "flip indy",
-        "smith grind",
-        "dark slide",
-        "switch 360 flip",
-        "backside nosegrind",
-        "nollie hardflip",
-        "fakie heelflip back",
-        "50 50 front-shuvit out "
+        'flip front',
+        'flip back',
+        'flip indy',
+        'smith grind',
+        'dark slide',
+        'switch 360 flip',
+        'backside nosegrind',
+        'nollie hardflip',
+        'fakie heelflip back',
+        '50 50 front-shuvit out ',
     ];
 
     /**

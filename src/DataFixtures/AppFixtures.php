@@ -11,7 +11,5 @@ class AppFixtures extends Fixture
     public function load(ObjectManager $manager): void
     {
         SkaterStory::load();
-
-        $manager->flush();
     }
 }

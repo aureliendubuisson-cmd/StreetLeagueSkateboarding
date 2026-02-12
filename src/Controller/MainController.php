@@ -12,7 +12,7 @@ class MainController extends AbstractController
     #[Route('/')]
     public function homepage(SkaterRepository $skaterRepository): Response
     {
-        $skaters=$skaterRepository->findall();
+        $skaters = $skaterRepository->findall();
 
         return $this->render('homepage.html.twig', ['skaters' => $skaters]);
     }

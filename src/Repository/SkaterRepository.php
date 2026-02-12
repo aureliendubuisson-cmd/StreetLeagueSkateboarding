@@ -11,10 +11,8 @@ use Doctrine\Persistence\ManagerRegistry;
  */
 class SkaterRepository extends ServiceEntityRepository
 {
-    public function __construct(ManagerRegistry $registry, string $entityClass)
+    public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, Skater::class);
     }
-
-
 }
