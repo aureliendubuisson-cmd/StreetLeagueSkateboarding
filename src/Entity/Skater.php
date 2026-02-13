@@ -30,4 +30,9 @@ class Skater
 
     #[ORM\Column]
     public ?bool $winSLS = null;
+
+    public function getFullName(): string
+    {
+        return $this->firstName . ' ' . $this->lastName;
+    }
 }
