@@ -24,4 +24,25 @@ class SkaterRepository extends ServiceEntityRepository
             ->getQuery()
             ->getResult();
     }
+
+    public function findSkatersYoungerThanAge(int $age): array
+    {
+        $actualYear = (int) new \DateTimeImmutable('now')->format('Y');
+        $limitYear = $actualYear - $age;
+
+        return $this->createQueryBuilder('s')
+            ->where('s.birthyear >= :limitYear')
+            ->setParameter('limitYear', $limitYear)
+            ->getQuery()
+            ->getResult();
+    }
+
+    public function findSkatersByCountry(string $country): array
+    {
+        return $this->createQueryBuilder('c')
+            ->where('c.nationality = :country')
+            ->setParameter('country', $country)
+            ->getQuery()
+            ->getResult();
+    }
 }
