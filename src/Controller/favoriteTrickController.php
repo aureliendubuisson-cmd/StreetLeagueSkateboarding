@@ -6,16 +6,14 @@ use App\Repository\SkaterRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
-use function React\Promise\all;
 
-class favoriteTrickController extends abstractController
+class favoriteTrickController extends AbstractController
 {
     #[Route('/{tricks}', name: 'favoriteTricks')]
     #[Route('/', name : 'homepage')]
-
     public function favoriteTrick(string $tricks, SkaterRepository $skaterRepository): Response
     {
-        $skaters = $skaterRepository->findNamesByFavoriteTrick(favoriteTrick: $tricks );
+        $skaters = $skaterRepository->findNamesByFavoriteTrick(favoriteTrick: $tricks);
 
         return $this->render('favoriteTrick.html.twig', ['skaters' => $skaters, 'tricks' => $tricks]);
     }

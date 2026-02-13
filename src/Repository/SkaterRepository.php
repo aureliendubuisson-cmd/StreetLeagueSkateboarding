@@ -3,9 +3,7 @@
 namespace App\Repository;
 
 use App\Entity\Skater;
-use App\Factory\SkaterFactory;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
-use Doctrine\ORM\QueryBuilder;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**

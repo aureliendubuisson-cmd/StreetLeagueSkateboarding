@@ -27,11 +27,11 @@ final class SkaterStory extends Story
             'favoriteTrick' => 'Slappy backside boardslide',
         ]);
         SkaterFactory::createOne([
-        'name' => 'Lou Hoth Guechot Dubuisson',
-        'nationality' => 'France',
-        'winSLS' => false,
-        'birthyear' => 2023,
-        'favoriteTrick' => 'To roll',
+            'name' => 'Lou Hoth Guechot Dubuisson',
+            'nationality' => 'France',
+            'winSLS' => false,
+            'birthyear' => 2023,
+            'favoriteTrick' => 'To roll',
         ]);
         SkaterFactory::createOne([
             'name' => 'Vincent Milou',
