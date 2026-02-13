@@ -14,7 +14,10 @@ class Skater
     public ?int $id = null;
 
     #[ORM\Column]
-    public ?string $name = null;
+    public ?string $lastName = null;
+
+    #[ORM\Column]
+    public ?string $firstName = null;
 
     #[ORM\Column]
     public ?string $nationality = null;

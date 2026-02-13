@@ -10,7 +10,7 @@ use Symfony\Component\Routing\Attribute\Route;
 class MainController extends AbstractController
 {
     #[Route('/', name: 'app_homepage')]
-    public function homepage(SkaterRepository $skaterRepository): Response
+    public function __invoke(SkaterRepository $skaterRepository): Response
     {
         $skaters = $skaterRepository->findall();
 

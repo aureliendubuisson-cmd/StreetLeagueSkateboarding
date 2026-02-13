@@ -10,7 +10,7 @@ use Symfony\Component\Routing\Attribute\Route;
 class FavoriteTrickController extends AbstractController
 {
     #[Route('/favorite-tricks/{tricks}', name: 'app_favorite_tricks')]
-    public function favoriteTrick(string $tricks, SkaterRepository $skaterRepository): Response
+    public function __invoke(string $tricks, SkaterRepository $skaterRepository): Response
     {
         $skaters = $skaterRepository->findNamesByFavoriteTrick(favoriteTrick: $tricks);
 
