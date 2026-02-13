@@ -15,4 +15,13 @@ class SkaterRepository extends ServiceEntityRepository
     {
         parent::__construct($registry, Skater::class);
     }
+
+    public function findNamesByFavoriteTrick(string $favoriteTrick): array
+    {
+        return $this->createQueryBuilder('s')
+            ->where('s.favoriteTrick = :favorite_trick')
+            ->setParameter('favorite_trick', $favoriteTrick)
+            ->getQuery()
+            ->getResult();
+    }
 }

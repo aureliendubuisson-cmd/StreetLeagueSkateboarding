@@ -17,42 +17,42 @@ final class SkaterStory extends Story
             'nationality' => 'France',
             'winSLS' => false,
             'birthyear' => 1985,
-            'favoriteTrick' => 'flip front',
+            'favoriteTrick' => 'Flip front',
         ]);
         SkaterFactory::createOne([
             'name' => 'Oreste Hoth Guechot Dubuisson',
             'nationality' => 'France',
             'winSLS' => false,
             'birthyear' => 2017,
-            'favoriteTrick' => 'slappy backside Boardslide',
+            'favoriteTrick' => 'Slappy backside boardslide',
         ]);
         SkaterFactory::createOne([
             'name' => 'Lou Hoth Guechot Dubuisson',
             'nationality' => 'France',
             'winSLS' => false,
             'birthyear' => 2023,
-            'favoriteTrick' => 'to roll',
+            'favoriteTrick' => 'To roll',
         ]);
         SkaterFactory::createOne([
             'name' => 'Vincent Milou',
             'nationality' => 'France',
             'winSLS' => true,
             'birthyear' => 1996,
-            'favoriteTrick' => 'Flip to Frontside Lipslide',
+            'favoriteTrick' => 'Flip to frontside lipslide',
         ]);
         SkaterFactory::createOne([
             'name' => 'Yuto Horigome',
             'nationality' => 'Japan',
             'winSLS' => true,
             'birthyear' => 1999,
-            'favoriteTrick' => 'Nollie 270 Bluntslide',
+            'favoriteTrick' => 'Nollie 270 bluntslide',
         ]);
         SkaterFactory::createOne([
             'name' => 'Jamie Foy',
             'nationality' => 'America',
             'winSLS' => false,
             'birthyear' => 1996,
-            'favoriteTrick' => 'Frontside Crooked-grind',
+            'favoriteTrick' => 'Frontside crooked-grind',
         ]);
     }
 }
