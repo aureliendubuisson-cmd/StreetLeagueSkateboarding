@@ -1,0 +1,17 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Les skaters selon leur pays{% endblock %}
+
+{% block body %}
+
+    <h1>Les skaters né en/au {{ country }} :</h1>
+    <ul>
+        {%  for skater in skaters %}
+
+            <li>{{ skater.name }}</li>
+
+        {% endfor %}
+        <li><a href="{{ path('app_homepage')}}">Return to the homepage</a></li>
+    </ul>
+
+{% endblock %}
