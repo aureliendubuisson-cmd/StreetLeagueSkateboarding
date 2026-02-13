@@ -21,7 +21,6 @@ class SkaterRepository extends ServiceEntityRepository
     public function findNamesByFavoriteTrick(string $favoriteTrick): array
     {
         return $this->createQueryBuilder('s')
-            ->select('s.name')
             ->where('s.favoriteTrick = :favorite_trick')
             ->setParameter('favorite_trick', $favoriteTrick)
             ->getQuery()

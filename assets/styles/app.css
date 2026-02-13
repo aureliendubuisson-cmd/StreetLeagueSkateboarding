@@ -13,6 +13,7 @@ body {
     text-align: left;
     color: orangered;
     font-size: medium;
+    white-space: pre-wrap;
 }
 
 .skaters{
@@ -32,4 +33,8 @@ body {
 
 footer{
     color: whitesmoke;
+}
+
+nav li{
+    text-align: left;
 }

@@ -4,6 +4,15 @@
 
 {% block body %}
 
-<h1>{{ favoriteTrick }}</h1>
+    <h1>{{ tricks }} :</h1>
+    <ul>
+    {%  for skater in skaters %}
+
+        <li>{{ skater.name }}</li>
+        <li>{{ skater.birthyear }}</li>
+
+    {% endfor %}
+        <li><a href="{{ path('homepage')}}">Return to the homepage</a></li>
+    </ul>
 
 {% endblock %}

@@ -1,6 +1,15 @@
 {% extends 'base.html.twig' %}
 
         {% block body %}
+            <nav>
+            <ul>
+                <li><a href="{{ path('favoriteTricks', {tricks:"flip front"}) }}">Flip front</a></li>
+                <li><a href="{{ path('favoriteTricks', {tricks:"to roll"}) }}">To roll</a></li>
+                <li><a href="{{ path('favoriteTricks', {tricks:"dark slide"}) }}">Dark slide</a></li>
+                <li><a href="{{ path('favoriteTricks', {tricks:"slappy backside Boardslide"}) }}">Slappy boardslide</a></li>
+
+            </ul>
+            </nav>
 
             <div class = "skaters">
                 <h1>Les cinq skaters les plus prometteurs de l'année 2026! </h1>
@@ -26,9 +35,9 @@
                         <h2>Win SLS : </h2>
                         <p>{{ skater.winSLS }}</p>
 
-                        <br>
 
                     {% endfor %}
 
             </div>
+
         {% endblock %}
