@@ -7,14 +7,13 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 
-class favoriteTrickController extends AbstractController
+class FavoriteTrickController extends AbstractController
 {
-    #[Route('/{tricks}', name: 'favoriteTricks')]
-    #[Route('/', name : 'homepage')]
+    #[Route('/{tricks}', name: 'app_favorite_tricks')]
     public function favoriteTrick(string $tricks, SkaterRepository $skaterRepository): Response
     {
         $skaters = $skaterRepository->findNamesByFavoriteTrick(favoriteTrick: $tricks);
 
-        return $this->render('favoriteTrick.html.twig', ['skaters' => $skaters, 'tricks' => $tricks]);
+        return $this->render('favorite_trick.html.twig', ['skaters' => $skaters, 'tricks' => $tricks]);
     }
 }
