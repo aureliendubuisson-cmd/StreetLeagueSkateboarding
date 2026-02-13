@@ -51,7 +51,8 @@ final class SkaterFactory extends PersistentObjectFactory
         return [
             'birthyear' => self::faker()->dateTimeBetween('-40 years', '-18 years')->format('Y'),
             'favoriteTrick' => self::REAL_TRICKS[$randomizeKey],
-            'name' => self::faker()->name(),
+            'firstName' => self::faker()->firstName(),
+            'lastName' => self::faker()->lastName(),
             'nationality' => self::faker()->country(),
             'winSLS' => self::faker()->boolean(),
         ];
