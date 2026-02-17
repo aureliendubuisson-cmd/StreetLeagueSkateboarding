@@ -54,6 +54,9 @@
                         <h2>Win SLS : </h2>
                         <p>{{ skater.winSLS }}</p>
 
+                        <h2>le plus jeune</h2>
+                        <p>{{ skater|is_younger_skater ? "C'est le plus jeune!" : "Ce n'est pas le plus jeune"}}</p>
+
 
                     {% endfor %}
 
