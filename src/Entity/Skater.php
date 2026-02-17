@@ -30,4 +30,28 @@ class Skater
 
     #[ORM\Column]
     public ?bool $winSLS = null;
+
+    public function getFullName(): string
+    {
+        return $this->firstName.' '.$this->lastName;
+    }
+
+    public static function create(
+        string $firstName,
+        string $lastName,
+        string $nationality,
+        int $birthyear,
+        string $favoriteTrick,
+        bool $slsWin,
+    ): self {
+        $newSkater = new Skater();
+        $newSkater->lastName = $lastName;
+        $newSkater->firstName = $firstName;
+        $newSkater->nationality = $nationality;
+        $newSkater->birthyear = $birthyear;
+        $newSkater->favoriteTrick = $favoriteTrick;
+        $newSkater->winSLS = $slsWin;
+
+        return $newSkater;
+    }
 }

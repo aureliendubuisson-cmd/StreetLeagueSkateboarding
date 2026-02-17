@@ -5,7 +5,7 @@
                 <h2>Voir les skaters selon leur trick préféré</h2>
                 <ul>
                     <li><a href="{{ path('app_favorite_tricks', {tricks:"flip front"}) }}">Flip front</a></li>
-                    <li><a href="{{ path('app_favorite_tricks', {tricks:"to roll"}) }}">To roll</a></li>
+                    <li><a href="{{ path('app_favorite_tricks', {tricks:"To roll"}) }}">To roll</a></li>
                     <li><a href="{{ path('app_favorite_tricks', {tricks:"dark slide"}) }}">Dark slide</a></li>
                     <li><a href="{{ path('app_favorite_tricks', {tricks:"slappy backside Boardslide"}) }}">Slappy boardslide</a></li>
 
@@ -37,8 +37,7 @@
                     {%  for skater in skaters %}
 
                         <h2> Name : </h2>
-                        <p>{{ skater.name }}</p>
-
+                        <p>{{ skater.getFullName() }}</p>
 
                         <h2>Nationality : </h2>
                         <p>{{ skater.nationality }}</p>
@@ -54,6 +53,9 @@
 
                         <h2>Win SLS : </h2>
                         <p>{{ skater.winSLS }}</p>
+
+                        <h2>le plus jeune</h2>
+                        <p>{{ skater|is_younger_skater ? "C'est le plus jeune!" : "Ce n'est pas le plus jeune"}}</p>
 
 
                     {% endfor %}
