@@ -6,15 +6,13 @@ namespace App\Twig;
 
 use App\Entity\Skater;
 use App\Repository\SkaterRepository;
-use Twig\Attribute\AsTwigFunction;
 use Twig\Attribute\AsTwigFilter;
 
 class SkaterAgeExtension
 {
     public function __construct(
-        public readonly SkaterRepository $skaterRepository
-    )
-    {
+        public readonly SkaterRepository $skaterRepository,
+    ) {
     }
 
     #[AsTwigFilter('is_younger_skater')]
