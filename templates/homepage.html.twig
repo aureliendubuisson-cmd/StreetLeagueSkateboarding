@@ -2,6 +2,12 @@
 
         {% block body %}
             <nav>
+
+                <h2>Créer un nouveau skater</h2>
+                <ul>
+                    <li><a href="{{ path('app_new_skater') }}">Cliquez ici!</a></li>
+                </ul>
+
                 <h2>Voir les skaters selon leur trick préféré</h2>
                 <ul>
                     <li><a href="{{ path('app_favorite_tricks', {tricks:"flip front"}) }}">Flip front</a></li>

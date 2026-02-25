@@ -1,0 +1,12 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+
+    {{ form_start(form) }}
+    {{ form_widget(form) }}
+    <button class = "button-submit" type="submit">Créer un nouveau skater!</button>
+    {{ form_end(form) }}
+
+    <li><a href="{{ path('app_homepage')}}">Retour à la page d'accueil</a></li>
+
+{% endblock %}
