@@ -45,4 +45,13 @@ class SkaterRepository extends ServiceEntityRepository
             ->getQuery()
             ->getResult();
     }
+
+    public function findByName(string $fullName): array
+    {
+        return $this->createQueryBuilder('s')
+            ->where('s.lastName = :last_name')
+            ->setParameter('last_name', $fullName)
+            ->getQuery()
+            ->getResult();
+    }
 }
