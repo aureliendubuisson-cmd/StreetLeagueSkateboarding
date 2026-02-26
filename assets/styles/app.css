@@ -39,7 +39,7 @@ nav li{
     text-align: left;
 }
 
-.button-submit {
+submi {
     appearance: none;
     border: none;
     background: linear-gradient(135deg, #6366f1, #4f46e5);
@@ -49,9 +49,5 @@ nav li{
     padding: 0.75rem 1.8rem;
     border-radius: 999px;
     cursor: pointer;
-    box-shadow: 0 10px 25px rgba(79, 70, 229, 0.35);
-    transition:
-        transform 0.15s ease,
-        box-shadow 0.15s ease,
-        background 0.3s ease;
+    box-shadow: 0 10px 25px rgba(79, 70, 229, 0.35)
 }

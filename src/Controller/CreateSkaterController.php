@@ -9,10 +9,10 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 
-class FormController extends AbstractController
+class CreateSkaterController extends AbstractController
 {
-    #[Route('/new_skater', name: 'app_new_skater')]
-    public function FormController(Request $request, EntityManagerInterface $entityManager): Response
+    #[Route('/new-skater', name: 'app-new-skater')]
+    public function __invoke(Request $request, EntityManagerInterface $entityManager): Response
     {
         $form = $this->createForm(SkaterType::class);
         $form->handleRequest($request);

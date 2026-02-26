@@ -4,6 +4,10 @@ namespace App\Form;
 
 use App\Entity\Skater;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
+use Symfony\Component\Form\Extension\Core\Type\IntegerType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -12,13 +16,26 @@ class SkaterType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('lastName')
-            ->add('firstName')
-            ->add('nationality')
-            ->add('birthyear')
-            ->add('favoriteTrick')
-            ->add('winSLS')
-
+            ->add('lastName', TextType::class)
+            ->add('firstName', TextType::class)
+            ->add('nationality', TextType::class)
+            ->add('birthyear', IntegerType::class)
+            ->add('favoriteTrick', TextType::class)
+            ->add('winSLS', CheckboxType::class, ['required' => false])
+            ->add('send', SubmitType::class, ['label' => 'Créer un nouveau skater!', 'attr' => [
+                'style' => '
+                        appearance: none;
+                        border: none;
+                        background: linear-gradient(135deg, #6366f1, #4f46e5);
+                        color: #ffffff;
+                        font-size: 1rem;
+                        font-weight: 600;
+                        padding: 0.75rem 1.8rem;
+                        border-radius: 999px;
+                        cursor: pointer;
+                        box-shadow: 0 10px 25px rgba(79, 70, 229, 0.35);
+                    ',
+            ], ])
         ;
     }
 
