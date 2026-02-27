@@ -11,7 +11,7 @@ use Symfony\Component\Routing\Attribute\Route;
 
 class CreateSkaterController extends AbstractController
 {
-    #[Route('/new_skater', name: 'app-new-skater')]
+    #[Route('/new-skater', name: 'app_new_skater')]
     public function __invoke(Request $request, EntityManagerInterface $entityManager): Response
     {
         $form = $this->createForm(SkaterType::class);

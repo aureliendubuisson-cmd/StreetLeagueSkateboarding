@@ -23,19 +23,7 @@ class SkaterType extends AbstractType
             ->add('favoriteTrick', TextType::class)
             ->add('winSLS', CheckboxType::class, ['required' => false])
             ->add('send', SubmitType::class, ['label' => 'Créer un nouveau skater!', 'attr' => [
-                'style' => '
-                        appearance: none;
-                        border: none;
-                        background: linear-gradient(135deg, #6366f1, #4f46e5);
-                        color: #ffffff;
-                        font-size: 1rem;
-                        font-weight: 600;
-                        padding: 0.75rem 1.8rem;
-                        border-radius: 999px;
-                        cursor: pointer;
-                        box-shadow: 0 10px 25px rgba(79, 70, 229, 0.35);
-                    ',
-            ], ])
+                'class' => 'button-submit']])
         ;
     }
 
