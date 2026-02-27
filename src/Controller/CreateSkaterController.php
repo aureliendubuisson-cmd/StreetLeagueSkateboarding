@@ -11,14 +11,14 @@ use Symfony\Component\Routing\Attribute\Route;
 
 class CreateSkaterController extends AbstractController
 {
-    #[Route('/new-skater', name: 'app-new-skater')]
+    #[Route('/new_skater', name: 'app-new-skater')]
     public function __invoke(Request $request, EntityManagerInterface $entityManager): Response
     {
         $form = $this->createForm(SkaterType::class);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
-            $NewSkater = $form->getData();
-            $entityManager->persist($NewSkater);
+            $newSkater = $form->getData();
+            $entityManager->persist($newSkater);
             $entityManager->flush();
 
             return $this->redirectToRoute('app_homepage');
