@@ -11,4 +11,3 @@
 ## Commandes php-cs-fixer
 
 * lancer php-cs-fixer (dans le conteneur php) `vendor/bin/php-cs-fixer fix`
- 

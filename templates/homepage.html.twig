@@ -2,37 +2,45 @@
 
         {% block body %}
             <nav>
-                <h2>Voir les skaters selon leur trick préféré</h2>
                 <ul>
+                        <li>Pour créer un nouveau skater <a href="{{ path('app_new_skater') }}">cliquez ici!</a></li>
+
+                    <li>Voir les skaters selon leur trick préféré
+
+                <ul class = "sub-menu">
                     <li><a href="{{ path('app_favorite_tricks', {tricks:"flip front"}) }}">Flip front</a></li>
                     <li><a href="{{ path('app_favorite_tricks', {tricks:"To roll"}) }}">To roll</a></li>
                     <li><a href="{{ path('app_favorite_tricks', {tricks:"dark slide"}) }}">Dark slide</a></li>
                     <li><a href="{{ path('app_favorite_tricks', {tricks:"slappy backside Boardslide"}) }}">Slappy boardslide</a></li>
-
                 </ul>
 
-                <h2>Voir les skaters selon leur age</h2>
-                <ul>
-                    <li><a href="{{ path('app_skaters_age', {age: 15}) }}">Moins de 15 ans</a></li>
-                    <li><a href="{{ path('app_skaters_age', {age:30}) }}">Moins de 30 ans</a></li>
+                    </li>
 
+                    <li>Voir les skaters selon leur age
 
-                </ul>
+                        <ul class = "sub-menu">
 
-                <h2>Voir les skaters selon leur pays</h2>
-                <ul>
-                    <li><a href="{{ path('app_country', {country :"France"}) }}">France</a></li>
-                    <li><a href="{{ path('app_country', {country :"Portugal"}) }}">Portugal</a></li>
+                            <li><a href="{{ path('app_skaters_age', {age: 15}) }}">Moins de 15 ans</a></li>
+                            <li><a href="{{ path('app_skaters_age', {age:30}) }}">Moins de 30 ans</a></li>
+                        </ul>
 
+                    </li>
+
+                    <li>Voir les skaters selon leur pays
+
+                        <ul class = "sub-menu">
+                            <li><a href="{{ path('app_country', {country :"France"}) }}">France</a></li>
+                            <li><a href="{{ path('app_country', {country :"Portugal"}) }}">Portugal</a></li>
+                        </ul>
+
+                    </li>
 
                 </ul>
 
             </nav>
 
-
-
             <div class = "skaters">
-                <h1>Les cinq skaters les plus prometteurs de l'année 2026! </h1>
+                <h1>Les skaters les plus prometteurs de l'année 2026! </h1>
 
                     {%  for skater in skaters %}
 
