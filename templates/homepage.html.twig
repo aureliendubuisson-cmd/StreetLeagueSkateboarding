@@ -47,7 +47,7 @@
                     {%  for skater in skaters %}
 
 
-                        <p><a href="{{ path('app_information', { fullName: skater.fullName }) }}">{{ skater.getFullName() }}</a></p>
+                        <p><a href="{{ path('app_information',{ firstName: skater.firstName, lastName : skater.lastName }) }}">{{ skater.firstName }} {{ skater.lastName }}</a></p>
 
 
                     {% endfor %}
