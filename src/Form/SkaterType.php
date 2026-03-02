@@ -21,7 +21,7 @@ class SkaterType extends AbstractType
             ->add('nationality', TextType::class)
             ->add('birthyear', IntegerType::class)
             ->add('favoriteTrick', TextType::class)
-            ->add('winSLS', CheckboxType::class, ['required' => false])
+            ->add('winSLS', CheckboxType::class)
             ->add('send', SubmitType::class, ['label' => 'Créer un nouveau skater!', 'attr' => [
                 'class' => 'button-submit']])
         ;
@@ -31,6 +31,9 @@ class SkaterType extends AbstractType
     {
         $resolver->setDefaults([
             'data_class' => Skater::class,
+            'attr' => [
+                'novalidate' => 'novalidate', // comment me to reactivate the html5 validation!  🚥
+            ]
         ]);
     }
 }

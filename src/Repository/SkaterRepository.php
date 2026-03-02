@@ -45,4 +45,15 @@ class SkaterRepository extends ServiceEntityRepository
             ->getQuery()
             ->getResult();
     }
+
+    /**
+     * @return array<string>
+     */
+    public function getDistinctTrick(): array
+    {
+        return $this->createQueryBuilder('s')
+            ->select('DISTINCT s.favoriteTrick')
+            ->getQuery()
+            ->getResult();
+    }
 }
