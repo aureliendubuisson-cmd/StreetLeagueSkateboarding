@@ -5,6 +5,7 @@ namespace App\Form;
 use App\Entity\Skater;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
+use Symfony\Component\Form\Extension\Core\Type\CountryType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
@@ -18,7 +19,7 @@ class SkaterType extends AbstractType
         $builder
             ->add('lastName', TextType::class)
             ->add('firstName', TextType::class)
-            ->add('nationality', TextType::class)
+            ->add('nationality', CountryType::class)
             ->add('birthyear', IntegerType::class)
             ->add('favoriteTrick', TextType::class)
             ->add('winSLS', CheckboxType::class)

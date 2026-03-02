@@ -33,7 +33,6 @@ class Skater
     public ?string $nationality = null;
 
     #[ORM\Column]
-    #[Assert\Positive(message: 'La date de naissance doit être positive.')]
     #[Assert\GreaterThan(value: 1920, message: 'Ton skater est centenaire.')]
     #[Assert\NotBlank(message: 'Veuillez renseigner la date de naissance du skater.')]
     public ?int $birthyear = null;
