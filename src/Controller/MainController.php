@@ -13,6 +13,7 @@ class MainController extends AbstractController
     public function __invoke(SkaterRepository $skaterRepository): Response
     {
         $skaters = $skaterRepository->findall();
+
         return $this->render('homepage.html.twig', ['skaters' => $skaters]);
     }
 }

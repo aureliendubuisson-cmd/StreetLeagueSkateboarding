@@ -33,7 +33,7 @@ class SkaterType extends AbstractType
             'data_class' => Skater::class,
             'attr' => [
                 'novalidate' => 'novalidate', // comment me to reactivate the html5 validation!  🚥
-            ]
+            ],
         ]);
     }
 }

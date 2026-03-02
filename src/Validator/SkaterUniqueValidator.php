@@ -25,15 +25,15 @@ class SkaterUniqueValidator extends ConstraintValidator
             throw new UnexpectedTypeException($constraint, SkaterUnique::class);
         }
 
-       $skater = $this->skaterRepository->findOneBy([
-           'firstName' => $value->firstName,
-           'lastName' => $value->lastName,
-           'birthyear' => $value->birthyear,
-       ]);
+        $skater = $this->skaterRepository->findOneBy([
+            'firstName' => $value->firstName,
+            'lastName' => $value->lastName,
+            'birthyear' => $value->birthyear,
+        ]);
 
-       if ($skater) {
-           $this->context->buildViolation($constraint->errorMessage)
-               ->addViolation();
-       }
+        if ($skater) {
+            $this->context->buildViolation($constraint->errorMessage)
+                ->addViolation();
+        }
     }
 }
