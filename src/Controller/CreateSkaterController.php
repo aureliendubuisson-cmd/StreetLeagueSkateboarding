@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Skater;
 use App\Form\SkaterType;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -17,6 +18,7 @@ class CreateSkaterController extends AbstractController
         $form = $this->createForm(SkaterType::class);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
+            /** @var Skater $newSkater */
             $newSkater = $form->getData();
             $entityManager->persist($newSkater);
             $entityManager->flush();
