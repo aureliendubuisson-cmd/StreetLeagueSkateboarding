@@ -1,0 +1,37 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Les skaters selon leur trick favori{% endblock %}
+
+{% block body %}
+
+    {{ form(form) }}
+    <li><a href="{{ path('app_homepage')}}">Retour à la page d'accueil</a></li>
+
+    <ul>
+        {% for skater in skaters %}
+            <h2> Name : </h2>
+
+            {{ skater.fullName }}
+
+            <h2> Country : </h2>
+
+            {{ skater.nationality }}
+
+            <h2> Birthyear : </h2>
+
+            {{ skater.birthyear }}
+
+            <h2> Favorite trick : </h2>
+
+            {{ skater.favoriteTrick }}
+
+            <h2> Win SLS : </h2>
+
+            {{ skater.winSLS }}
+
+
+            <li><a href="{{ path('app_homepage')}}">Return to the homepage</a></li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}
