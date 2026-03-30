@@ -1,8 +1,44 @@
 {% extends "base.html.twig" %}
 
 {% block body %}
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card border-0 shadow-lg mt-5">
+                <div class="card-header bg-dark text-center py-3">
+                    <h3 class="mb-0 text-white text-uppercase fw-bold" style="letter-spacing: 2px;">
+                        Enregistrer un nouveau Skater
+                    </h3>
+                </div>
+                <div class="card-body p-5">
 
-    {{ form(form) }}
-    <li><a href="{{ path('app_homepage')}}">Retour à la page d'accueil</a></li>
+                    {{ form_start(form) }}
+                    {# form_rest génère tous les champs non appelés manuellement #}
+                    {# Mais appeler chaque champ permet de mieux gérer le design #}
+                    <div class="row">
+                        <div class="col-md-6">{{ form_row(form.firstName) }}</div>
+                        <div class="col-md-6">{{ form_row(form.lastName) }}</div>
+                    </div>
 
+                    {{ form_row(form.nationality) }}
+
+                    <div class="row">
+                        <div class="col-md-6">{{ form_row(form.birthyear) }}</div>
+                        <div class="col-md-6">{{ form_row(form.favoriteTrick) }}</div>
+                    </div>
+
+                    <div class="mb-4 d-flex align-items-center">
+                        {{ form_widget(form.winSLS, {'label': false}) }}
+                        <label class="ms-2 mb-0" for="{{ form.winSLS.vars.id }}">A déjà gagné une SLS ?</label>
+                    </div>
+                    {{ form_end(form) }}
+
+                    <div class="text-center mt-4">
+                        <a href="{{ path('app_homepage')}}" class="small">
+                            ← Retour à l'accueil
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}

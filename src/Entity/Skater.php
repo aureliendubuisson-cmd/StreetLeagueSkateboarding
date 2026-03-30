@@ -3,15 +3,11 @@
 namespace App\Entity;
 
 use App\Repository\SkaterRepository;
-use App\Validator as AppAssert;
 use Doctrine\ORM\Mapping as ORM;
-use http\Message;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
-use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: SkaterRepository::class)]
-// #[UniqueEntity(fields: ['lastName', 'firstName', 'birthyear'], message: 'Ce skater existe déjà.')]
-#[AppAssert\SkaterUnique]
+#[UniqueEntity(fields: ['lastName', 'firstName', 'birthyear'], message: 'Ce skater existe déjà.')]
 class Skater
 {
     #[ORM\Id]

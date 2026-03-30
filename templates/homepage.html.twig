@@ -1,57 +1,60 @@
 {% extends 'base.html.twig' %}
 
-        {% block body %}
-            <nav>
-                <ul>
-                        <li>Pour créer un nouveau skater <a href="{{ path('app_new_skater') }}">cliquez ici!</a></li>
+{% block body %}
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark rounded shadow-sm mb-5">
+        <div class="container-fluid">
+            <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+                <ul class="navbar-nav w-100 justify-content-around">
 
-                    <li>Voir les skaters selon leur trick préféré
-
-                <ul class = "sub-menu">
-                    <li><a href="{{ path('app_favorite_tricks', {tricks:"flip front"}) }}">Flip front</a></li>
-                    <li><a href="{{ path('app_favorite_tricks', {tricks:"To roll"}) }}">To roll</a></li>
-                    <li><a href="{{ path('app_favorite_tricks', {tricks:"dark slide"}) }}">Dark slide</a></li>
-                    <li><a href="{{ path('app_favorite_tricks', {tricks:"slappy backside Boardslide"}) }}">Slappy boardslide</a></li>
-                </ul>
-
+                    <li class="nav-item">
+                        <a class="btn btn-warning fw-bold" href="{{ path('app_new_skater') }}">＋ NOUVEAU SKATER</a>
                     </li>
 
-                    <li>Voir les skaters selon leur age
-
-                        <ul class = "sub-menu">
-
-                            <li><a href="{{ path('app_skaters_age', {age: 15}) }}">Moins de 15 ans</a></li>
-                            <li><a href="{{ path('app_skaters_age', {age:30}) }}">Moins de 30 ans</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown">TRICKS</a>
+                        <ul class="dropdown-menu dropdown-menu-dark">
+                            <li><a class="dropdown-item" href="{{ path('app_favorite_tricks', {tricks:"flip front"}) }}">Flip front</a></li>
+                            <li><a class="dropdown-item" href="{{ path('app_favorite_tricks', {tricks:"To roll"}) }}">To roll</a></li>
+                            <li><a class="dropdown-item" href="{{ path('app_favorite_tricks', {tricks:"dark slide"}) }}">Dark slide</a></li>
+                            <li><a class="dropdown-item" href="{{ path('app_favorite_tricks', {tricks:"slappy backside Boardslide"}) }}">Slappy boardslide</a></li>
                         </ul>
-
                     </li>
 
-                    <li>Voir les skaters selon leur pays
-
-                        <ul class = "sub-menu">
-                            <li><a href="{{ path('app_country', {country :"France"}) }}">France</a></li>
-                            <li><a href="{{ path('app_country', {country :"Portugal"}) }}">Portugal</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown">AGE</a>
+                        <ul class="dropdown-menu dropdown-menu-dark">
+                            <li><a class="dropdown-item" href="{{ path('app_skaters_age', {age: 15}) }}">Moins de 15 ans</a></li>
+                            <li><a class="dropdown-item" href="{{ path('app_skaters_age', {age: 30}) }}">Moins de 30 ans</a></li>
                         </ul>
-
                     </li>
 
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown">PAYS</a>
+                        <ul class="dropdown-menu dropdown-menu-dark">
+                            <li><a class="dropdown-item" href="{{ path('app_country', {country :"France"}) }}">France</a></li>
+                            <li><a class="dropdown-item" href="{{ path('app_country', {country :"Portugal"}) }}">Portugal</a></li>
+                        </ul>
+                    </li>
                 </ul>
-
-            </nav>
-
-            <div class = "skaters">
-                <h1>Liste des skaters les plus prometteurs de l'année 2026! </h1>
-
-                <h2> Name : </h2>
-
-                    {%  for skater in skaters %}
-
-
-                        <p><a href="{{ path('app_skater_detail',{ id: skater.id }) }}">{{ skater.firstName }} {{ skater.lastName }}</a></p>
-
-
-                    {% endfor %}
-
             </div>
+        </div>
+    </nav>
 
-        {% endblock %}
+    <div class="skaters-section text-center">
+        <h2 class="mb-4 display-5 fw-bold section-title">PROMETTEURS 2026</h2>
+
+        <div class="row g-4 mt-2">
+            {% for skater in skaters %}
+                <div class="col-md-4">
+                    <div class="card bg-secondary text-white h-100 border-0 shadow">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ skater.firstName }} {{ skater.lastName }}</h5>
+                            <p class="card-text text-light opacity-75 small">Membre Officiel SLS</p>
+                            <a href="{{ path('app_skater_detail',{ id: skater.id }) }}" class="btn btn-outline-warning btn-sm">Voir le profil</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
