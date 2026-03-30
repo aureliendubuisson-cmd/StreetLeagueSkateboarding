@@ -45,4 +45,23 @@ class SkaterRepository extends ServiceEntityRepository
             ->getQuery()
             ->getResult();
     }
+
+    /**
+     * @return array<string>
+     */
+    public function getDistinctCountry(): array
+    {
+        return $this->createQueryBuilder('s')
+            ->select('DISTINCT s.nationality')
+            ->getQuery()
+            ->getSingleColumnResult();
+    }
+
+    public function getDistinctFavoriteTrick(): array
+    {
+        return $this->createQueryBuilder('s')
+            ->select('DISTINCT s.favoriteTrick')
+            ->getQuery()
+            ->getSingleColumnResult();
+    }
 }
