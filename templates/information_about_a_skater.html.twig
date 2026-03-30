@@ -1,28 +1,50 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+            <div class="card bg-dark border-warning shadow-lg overflow-hidden">
+                <div class="bg-warning p-4 text-dark text-center">
+                    <h2 class="fw-bold mb-0 text-uppercase text-dark" style="font-family: 'Oswald';">{{ skater.fullName }}</h2>
+                    <span class="badge bg-dark text-white">ATHLÈTE OFFICIEL SLS</span>
+                </div>
 
-    <h2> Name : </h2>
+                <div class="card-body p-4">
+                    <div class="row g-4">
+                        <div class="col-6">
+                            {# J'ai retiré text-muted pour utiliser notre style label direct #}
+                            <label class="small text-uppercase">Pays</label>
+                            <p class="h5 text-white">{{ skater.nationality }}</p>
+                        </div>
+                        <div class="col-6 text-end">
+                            <label class="small text-uppercase">Année de Naissance</label>
+                            <p class="h5 text-white">{{ skater.birthyear }}</p>
+                        </div>
 
-{{ skater.fullName }}
+                        <div class="col-12 border-top border-secondary pt-3">
+                            <label class="small text-uppercase">Trick Favori</label>
+                            <p class="h4 text-warning fw-bold">{{ skater.favoriteTrick }}</p>
+                        </div>
 
-        <h2> Country : </h2>
+                        <div class="col-12 border-top border-secondary pt-3">
+                            <label class="small text-uppercase">Palmarès SLS</label>
+                            <p class="h5">
+                                {% if skater.winSLS %}
+                                    <span class="text-success">🏆 Vainqueur SLS</span>
+                                {% else %}
+                                    <span class="text-light opacity-75">Candidat au titre</span>
+                                {% endif %}
+                            </p>
+                        </div>
+                    </div>
+                </div>
 
-        {{ skater.nationality }}
-
-        <h2> Birthyear : </h2>
-
-        {{ skater.birthyear }}
-
-        <h2> Favorite trick : </h2>
-
-        {{ skater.favoriteTrick }}
-
-        <h2> Win SLS : </h2>
-
-        {{ skater.winSLS }}
-
-
-    <li><a href="{{ path('app_homepage')}}">Return to the homepage</a></li>
-
+                <div class="card-footer border-0 bg-transparent text-center pb-4">
+                    <a href="{{ path('app_homepage')}}" class="btn btn-outline-warning w-100 fw-bold">
+                        ← RETOUR AU DASHBOARD
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}

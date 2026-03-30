@@ -1,17 +1,47 @@
 {% extends "base.html.twig" %}
 
-{% block title %}Les skaters selon leur pays{% endblock %}
+{% block title %}Filtre Skaters{% endblock %}
 
 {% block body %}
-
-    <h1>Les skaters né en/au {{ country }} :</h1>
-    <ul>
-        {%  for skater in skaters %}
-
-            <li>{{ skater.fullName }}</li>
-
-        {% endfor %}
-        <li><a href="{{ path('app_homepage')}}">Return to the homepage</a></li>
-    </ul>
-
+    <div class="card bg-dark border-warning shadow-lg">
+        <div class="card-header border-warning d-flex justify-content-between align-items-center">
+            <h2 class="header-title title-young mb-0">
+                {# On adapte le titre dynamiquement #}
+                {% if country is defined %}
+                    SKATERS : {{ country|upper }}
+                {% else %}
+                    MOINS DE {{ age }} ANS
+                {% endif %}
+            </h2>
+            <a href="{{ path('app_homepage')}}" class="btn btn-outline-light btn-sm">Retour</a>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-dark table-hover mb-0">
+                    <thead>
+                    <tr>
+                        <th>Nom</th>
+                        {% if age is defined %}<th>Année de naissance</th>{% endif %}
+                        <th class="text-end">Statut</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for skater in skaters %}
+                        <tr>
+                            <td class="align-middle">
+                                <a href="{{ path('app_skater_detail',{ id: skater.id }) }}" class="text-decoration-none text-white fw-bold">
+                                    {{ skater.getFullName()|default(skater.fullName) }}
+                                </a>
+                            </td>
+                            {% if age is defined %}<td>{{ skater.birthyear }}</td>{% endif %}
+                            <td class="text-end"><span class="badge bg-warning text-dark">LISTED</span></td>
+                        </tr>
+                    {% else %}
+                        <tr><td colspan="3" class="text-center text-muted">Aucun skater trouvé.</td></tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
 {% endblock %}
