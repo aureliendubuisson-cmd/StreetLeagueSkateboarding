@@ -4,34 +4,32 @@
 
 {% block body %}
 
-    {{ form(form) }}
-    <li><a href="{{ path('app_homepage')}}">Retour à la page d'accueil</a></li>
+    <div class="card mb-4">
+        <div class="card-body">
+            {{ form(form) }}
+        </div>
+    </div>
 
-    <ul>
-        {% for skater in skaters %}
-            <h2> Name : </h2>
+    <div class="skaters-section text-center">
+        <div class="row g-4 mt-2">
+            {% for skater in skaters %}
+                <div class="col-md-4">
+                    <div class="card bg-secondary text-white h-100 border-0 shadow">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ skater.fullName }}</h5>
+                            <p class="card-text text-light opacity-75 small">Membre Officiel SLS</p>
+                            <a href="{{ path('app_skater_detail', { id: skater.id }) }}" class="btn btn-outline-warning btn-sm">Voir le profil</a>
+                        </div>
+                    </div>
+                </div>
+            {% else %}
+                <p class="text-muted">Aucun skater trouvé.</p>
+            {% endfor %}
+        </div>
+    </div>
 
-            {{ skater.fullName }}
-
-            <h2> Country : </h2>
-
-            {{ skater.nationality }}
-
-            <h2> Birthyear : </h2>
-
-            {{ skater.birthyear }}
-
-            <h2> Favorite trick : </h2>
-
-            {{ skater.favoriteTrick }}
-
-            <h2> Win SLS : </h2>
-
-            {{ skater.winSLS }}
-
-
-            <li><a href="{{ path('app_homepage')}}">Return to the homepage</a></li>
-        {% endfor %}
-    </ul>
+    <div class="text-center mt-4">
+        <a href="{{ path('app_homepage') }}" class="small">← Retour à l'accueil</a>
+    </div>
 
 {% endblock %}
