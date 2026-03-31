@@ -9,9 +9,9 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 
-class TrickTypeController extends AbstractController
+class NewTrickController extends AbstractController
 {
-    #[Route('/trick-type', name: 'app_trick_type')]
+    #[Route('/new-trick', name: 'app_new_trick')]
     public function invoke(Request $request, EntityManagerInterface $em): Response
     {
         $form = $this->createForm(TrickType::class);
@@ -24,6 +24,6 @@ class TrickTypeController extends AbstractController
             return $this->redirectToRoute('app_homepage');
         }
 
-        return $this->render('trick_type.html.twig', ['form' => $form]);
+        return $this->render('new_trick.html.twig', ['form' => $form]);
     }
 }
