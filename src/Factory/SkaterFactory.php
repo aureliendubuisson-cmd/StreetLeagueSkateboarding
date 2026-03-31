@@ -10,28 +10,6 @@ use Zenstruck\Foundry\Persistence\PersistentObjectFactory;
  */
 final class SkaterFactory extends PersistentObjectFactory
 {
-    public const array REAL_TRICKS = [
-        'flip front',
-        'flip back',
-        'flip indy',
-        'smith grind',
-        'dark slide',
-        'switch 360 flip',
-        'backside nosegrind',
-        'nollie hardflip',
-        'fakie heelflip back',
-        '50 50 front-shuvit out ',
-    ];
-
-    /**
-     * @see https://symfony.com/bundles/ZenstruckFoundryBundle/current/index.html#factories-as-services
-     *
-     * @todo inject services if required
-     */
-    public function __construct()
-    {
-    }
-
     #[\Override]
     public static function class(): string
     {
@@ -46,11 +24,9 @@ final class SkaterFactory extends PersistentObjectFactory
     #[\Override]
     protected function defaults(): array|callable
     {
-        $randomizeKey = array_rand(self::REAL_TRICKS);
-
         return [
             'birthyear' => self::faker()->dateTimeBetween('-40 years', '-18 years')->format('Y'),
-            'favoriteTrick' => self::REAL_TRICKS[$randomizeKey],
+            'favoriteTrick' => TrickFactory::random(),
             'firstName' => self::faker()->firstName(),
             'lastName' => self::faker()->lastName(),
             'nationality' => self::faker()->country(),

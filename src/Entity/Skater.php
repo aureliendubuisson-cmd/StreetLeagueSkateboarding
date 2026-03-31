@@ -34,11 +34,11 @@ class Skater
     public ?int $birthyear = null;
 
     #[ORM\Column]
-    #[Assert\NotBlank(message: 'Veuillez renseigner le trick favori du skater.')]
-    public ?string $favoriteTrick = null;
-
-    #[ORM\Column]
     public bool $winSLS = false;
+
+    #[ORM\ManyToOne]
+    #[ORM\JoinColumn(nullable: false)]
+    public ?Trick $favoriteTrick = null;
 
     public function getFullName(): string
     {
